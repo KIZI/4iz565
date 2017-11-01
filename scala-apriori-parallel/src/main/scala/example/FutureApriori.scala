@@ -4,7 +4,7 @@ import java.io.File
 import java.util.concurrent.atomic.AtomicInteger
 
 import example.NonParallelApriori.minSupport
-import example.data.{ItemSet, Transactions}
+import example.data.{ItemSet, Database}
 import example.utils.CollectionExtensions._
 
 import scala.concurrent.duration.Duration
@@ -26,7 +26,7 @@ object FutureApriori {
     /**
       * Load all transactions from a dataset
       */
-    implicit val transactions: Transactions = Transactions.fromCsv(new File("KO_Bank_all.csv"))
+    implicit val transactions: Database = Database.fromCsv(new File("KO_Bank_all.csv"))
 
     /**
       * Create an execution context which is need for Future operations

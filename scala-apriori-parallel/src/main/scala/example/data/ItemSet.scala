@@ -3,7 +3,7 @@ package example.data
 /**
   * Created by Vaclav Zeman on 31. 10. 2017.
   */
-class ItemSet private(_items: List[Item])(implicit tx: Transactions, o: Ordering[Item]) {
+class ItemSet private(_items: List[Item])(implicit tx: Database, o: Ordering[Item]) {
 
   lazy val items: Set[Item] = _items.toSet
 
@@ -21,6 +21,6 @@ class ItemSet private(_items: List[Item])(implicit tx: Transactions, o: Ordering
 
 object ItemSet {
 
-  def apply()(implicit transactions: Transactions): ItemSet = new ItemSet(Nil)
+  def apply()(implicit transactions: Database): ItemSet = new ItemSet(Nil)
 
 }

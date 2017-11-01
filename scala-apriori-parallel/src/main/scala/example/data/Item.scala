@@ -9,7 +9,7 @@ case class Item(attribute: String, value: String) {
 
 object Item {
 
-  implicit def itemOrdering(implicit transactions: Transactions): Ordering[Item] = {
+  implicit def itemOrdering(implicit transactions: Database): Ordering[Item] = {
     val map = transactions.items.iterator.zipWithIndex.toMap
     Ordering.by[Item, Int](map.apply)
   }

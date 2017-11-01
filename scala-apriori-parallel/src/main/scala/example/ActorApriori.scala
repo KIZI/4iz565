@@ -7,7 +7,7 @@ import akka.actor.{Actor, ActorRef, ActorSystem, Props}
 import akka.routing.{Broadcast, RoundRobinRoutingLogic, Router}
 import example.ActorApriori.AprioriActor._
 import example.NonParallelApriori.minSupport
-import example.data.{Item, ItemSet, Transactions}
+import example.data.{Item, ItemSet, Database}
 import example.utils.CollectionExtensions._
 
 import scala.collection.mutable
@@ -139,7 +139,7 @@ object ActorApriori {
     /**
       * Load all transactions from a dataset
       */
-    implicit val transactions: Transactions = Transactions.fromCsv(new File("KO_Bank_all.csv"))
+    implicit val transactions: Database = Database.fromCsv(new File("KO_Bank_all.csv"))
 
     /**
       * Count the number of availaible cores

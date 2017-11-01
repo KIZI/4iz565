@@ -4,7 +4,7 @@ import java.io.File
 import java.util.concurrent.atomic.AtomicInteger
 
 import example.NonParallelApriori.minSupport
-import example.data.{ItemSet, Transactions}
+import example.data.{ItemSet, Database}
 
 /**
   * Created by Vaclav Zeman on 19. 10. 2017.
@@ -22,7 +22,7 @@ object ParallelCollectionApriori {
     /**
       * Load all transactions from a dataset
       */
-    implicit val transactions: Transactions = Transactions.fromCsv(new File("KO_Bank_all.csv"))
+    implicit val transactions: Database = Database.fromCsv(new File("KO_Bank_all.csv"))
 
     /**
       * Get all items from transactions which have relative support greater or equal than min support
