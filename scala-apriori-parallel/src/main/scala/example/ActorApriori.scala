@@ -200,7 +200,7 @@ object ActorApriori {
     val terminationChecker = Future.sequence(workers.map(_.terminationChecker))
     Await.result(terminationChecker, Duration.Inf)
 
-    println(s"Number of rules: ${counter.get()}")
+    println(s"Number of frequent itemsets: ${counter.get()}")
     println(s"Mining time: ${(System.currentTimeMillis() - startTime) / 1000}s")
 
     actorSystem.terminate()

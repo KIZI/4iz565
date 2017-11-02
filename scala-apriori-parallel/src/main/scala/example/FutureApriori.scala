@@ -91,7 +91,7 @@ object FutureApriori {
       */
     Await.result(futureResult.flatMap(Future.sequence(_)), Duration.Inf)
 
-    println(s"Number of rules: ${counter.get()}")
+    println(s"Number of frequent itemsets: ${counter.get()}")
     println(s"Mining time: ${(System.currentTimeMillis() - startTime) / 1000}s")
   }
 
