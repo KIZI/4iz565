@@ -6,8 +6,7 @@ scalaVersion := "2.11.8"
 
 fork := true
 
-libraryDependencies += "com.github.tototoshi" %% "scala-csv" % "1.3.5"
-libraryDependencies += "org.apache.spark" %% "spark-core" % "2.2.0"
+libraryDependencies += "org.apache.spark" %% "spark-sql" % "2.2.0"
 
 dependencyOverrides ++= Seq(
   "io.netty" % "netty" % "3.9.9.Final",
