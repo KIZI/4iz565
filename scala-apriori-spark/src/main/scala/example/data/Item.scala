@@ -6,3 +6,9 @@ package example.data
 case class Item(attribute: String, value: String) {
   override def toString: String = attribute + "=" + value
 }
+
+object Item {
+
+  implicit def itemOrdering(implicit map: Map[Item, Int]): Ordering[Item] = Ordering.by[Item, Int](map.apply)
+
+}
